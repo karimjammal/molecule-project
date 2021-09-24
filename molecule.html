@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="molecule" src="assets/molecule.gltf"></a-asset-item>
+        </a-assets>
+
+        <a-sky color="white"></a-sky>
+
+        <a-plane color="grey" rotation="-90 0 0" scale="5 5 1"></a-plane>
+
+        <a-entity position="0 0 2">
+            <a-camera id="cam">
+                <a-cursor color="red"></a-cursor>
+            </a-camera>
+        </a-entity>
+
+        <a-entity id="molecule-gltf" light="distance: 3; intensity: 3; type: point" gltf-model="#molecule"
+            position="-5 2.8 -5.5" scale="0.01 0.01 0.01" look-at="#cam"></a-entity>
+    </a-scene>
+
+
+</body>
+
+</html>
